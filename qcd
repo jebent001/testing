@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# script to quick cd (qcd) to directories
+qcd () {
+  # Accept 1 argument that's a string key, and perform a different
+  # "cd" operation for each key.
+  case "$1" in
+    testing)
+      cd $HOME/Projects/testing
+      ;;
+    homework)
+      cd $HOME/Projects/Linux-Scripting
+      ;;
+    *)
+      # The supplied argument was not one of the supported keys
+      echo "qcd: unknown key '$1'"
+      return 1
+      ;;
+  esac
+  # Helpfully print the current directory name to indicate where you are
+  pwd
+}
+
+qcd $@

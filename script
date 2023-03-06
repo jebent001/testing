@@ -1,0 +1,4 @@
+#!/bin/bash
+history > hist.txt
+grep alias hist.txt
+rm hist.txt

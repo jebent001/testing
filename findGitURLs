@@ -1,0 +1,17 @@
+#!/bin/bash
+echo method 1
+find . -name "config" > configFileList
+
+echo method 2
+configFileList='find . -name "config"'
+echo $configFileList
+
+echo method 3
+grep -r "url" | grep config | cut -f2 | cut -c7-
+
+echo method 4 (for loop)
+# for loop
+echo
+for file in 'find . -name "config"'; do
+	echo $file "!!!"
+done
